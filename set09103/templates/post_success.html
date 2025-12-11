@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Post Submitted!</h2>
+<p> </p>
+<h2>Your suggestion is under review.</h2>
+
+<div id="game-list">
+    <a href="{{ url_for('index') }}" class="game-card" data-title="Return to the homepage">
+	<h3>Return to the homepage</h3>
+    </a>
+</div>
+
+{% endblock %}

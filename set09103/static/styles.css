@@ -1,0 +1,478 @@
+/* General Reset and Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #2F2F2F;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Flex container for horizontal nav items */
+nav .menu-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Style links to match buttons */
+nav .menu a.menu-button {
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+nav .menu a.menu-button:hover {
+    background-color: #555;
+}
+
+#searchInput {
+    padding: 8px;
+    margin: 1px;
+}
+
+/* Styling for each menu (container with button and dropdown) */
+.menu {
+  position: relative;
+}
+
+.menu button {
+  background-color: #444;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu button:hover {
+  background-color: #555;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  color: white;
+  display: none;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover {
+  background-color: #555;
+}
+
+/* Show dropdown when toggled */
+.menu .dropdown:not(.hidden) {
+  display: block;
+}
+
+/* Responsive design: Stacks menu items vertically on small screens */
+@media (max-width: 768px) {
+  nav .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    width: 100%;
+  }
+
+  .menu button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* Optional: Hover to show dropdown on larger screens */
+@media (min-width: 769px) {
+  .menu:hover .dropdown {
+    display: block;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode nav .menu a.menu-button,
+body.dark-mode .menu button {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .menu button:hover,
+body.dark-mode nav .menu a.menu-button:hover {
+    background-color: #444;
+}
+
+body.dark-mode .dropdown {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .dropdown a:hover {
+    background-color: #444;
+}
+
+body.dark-mode .content,
+body.dark-mode .submit-wrapper,
+body.dark-mode .game-card,
+body.dark-mode .slides-wrapper {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+body.dark-mode .submit-button {
+    background-color: #555;
+    border-color: #ccc;
+    color: #fff;
+}
+
+body.dark-mode .submit-button:hover {
+    background-color: #666;
+}
+
+body.dark-mode .slide-btn {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+.tag-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.tag-link {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;   /* Removes underline */
+
+    font-size: 16px;
+    border: 2px solid #888;      /* Outline */
+    transition: background 0.2s ease;
+}
+
+.tag-btn:hover {
+    background: #666;
+    color: #000;
+}
+
+body {
+  background-color: #323338;
+}
+
+.visualbar {
+    background-color: #444;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+/* simple wrapper for page content */
+.content {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #414247;
+}
+
+.content p {
+    margin: auto;
+    padding: 2px;
+    padding-top: 5px;
+    color: white;
+}
+
+.content h1, h2 {
+    color: white;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+/* Form container */
+.submit-wrapper {
+    width: 85%;
+    max-width: 900px;
+    background-color: #e4d1b3;
+    padding: 30px 25px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-family: 'Cascadia Mono', monospace;
+}
+
+/* Form title */
+.submit-title {
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form layout */
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* space between fields */
+}
+
+/* Labels */
+.feedback-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Inputs and textareas */
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #2b1a0f;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Cascadia Mono', monospace;
+    box-sizing: border-box;
+    resize: vertical; /* allow textarea to resize vertically only */
+}
+
+/* Submit button */
+.submit-button {
+    align-self: flex-start; /* float left */
+    padding: 10px 25px;
+    background-color: #e3dac9;
+    border: 2px solid #2b1a0f;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #d4b38a;
+}
+
+
+/* Container for the whole list */
+#game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* The clickable card itself */
+.game-card {
+    display: block;
+    text-decoration: none;
+    background-color: #1e1e1e;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Title inside the card */
+.game-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.4rem;
+}
+
+/* Hover effect so users know it's clickable */
+.game-card:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+/* Click/press effect */
+.game-card:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wrapper for images */
+.slides-wrapper {
+    width: 100%;
+    height: 400px;              /* Fixed height */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* Individual slides */
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* Makes different images same size */
+    display: none;              /* Hide all by default */
+}
+
+/* Buttons */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.slide-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.description {
+    margin: 20px;
+    margin-left: 160px;
+}
+
+.description h3 {
+    color: white;
+    padding: 5px;
+}
+
+/* System requirements panel */
+.requirements {
+    background: linear-gradient(145deg, #1a1a1a, #242424);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px 24px;
+    max-width: 420px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    margin: 40px;
+    margin-left: 160px;
+}
+
+/* Title-style effect if you add a heading later */
+.requirements::before {
+    content: "System Requirements";
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: #00e1ff;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+/* List styling */
+.requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements h3 {
+    color: white;
+}
+
+.requirements li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.95rem;
+    color: #eaeaea;
+}
+
+/* Why have I subjected myself to this? */
+/* I hate CSS */
+/* Remove border from last item */
+.requirements li:last-child {
+    border-bottom: none;
+}
+
+/* Highlight spec labels */
+.requirements li strong {
+    color: #9effff;
+    font-weight: 600;
+}
+
+/* Hover effect */
+.requirements li:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding-left: 6px;
+    transition: all 0.2s ease;
+}
+

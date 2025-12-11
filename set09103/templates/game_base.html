@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="game-page">
+
+    <!-- Title block -->
+    <h2 class="game-title">
+        {% block game_title %}{% endblock %}
+    </h2>
+
+    <!-- Slideshow block -->
+    <div class="slideshow">
+        {% block game_slideshow %}{% endblock %}
+    </div>
+
+    <!-- Requirements block -->
+    <div class="requirements">
+        <h3>System Requirements</h3>
+        {% block game_requirements %}{% endblock %}
+    </div>
+
+    <!-- Description block -->
+    <div class="description">
+        <h3>Description</h3>
+        {% block game_description %}{% endblock %}
+    </div>
+
+</div>
+
+{% endblock %}

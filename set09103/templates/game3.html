@@ -1,0 +1,36 @@
+{% extends "game_base.html" %}
+
+{% block game_title %}
+Elden Ring
+{% endblock %}
+
+{% block game_slideshow %}
+<div class="slideshow-container">
+    <button class="slide-btn prev">&#10094;</button>
+    <div class="slides-wrapper">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_510a02cf3045e841e180f2b77fb87545e0c8b59d.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_943bf6fe62352757d9070c1d33e50b92fe8539f1.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_dcdac9e4b26ac0ee5248bfd2967d764fd00cdb42.1920x1080.jpg') }}">
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+</div>
+
+{% endblock %}
+
+<div class="requirements-panel">
+    {% block game_requirements %}
+    <ul>
+	<li>OS: Windows 10</li>
+	<li>CPU: i5 or equivalent</li>
+	<li>RAM: 16 GB</li>
+	<li>GPU: GTX 1060 or better</li>
+    </ul>
+    {% endblock %}
+</div>
+
+{% block game_description %}
+<p>
+    Elden Ring is an open-world action RPG by FromSoftware.
+</p>
+{% endblock %}

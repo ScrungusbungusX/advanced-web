@@ -1,0 +1,37 @@
+{% extends "game_base.html" %}
+
+{% block game_title %}
+Halo Infinite
+{% endblock %}
+
+{% block game_slideshow %}
+<div class="slideshow-container">
+    <button class="slide-btn prev">&#10094;</button>
+    <div class="slides-wrapper">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_2b1478c28ebdf38b5f8d82de0d72227cdaaf7bbb.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_11b6e12f4fe97f00ef37d4d9c7b730bfd5d07fdd.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_8f26ccb1035f6244fa8207a95435666d57e9c77f.1920x1080.jpg') }}">
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+</div>
+
+{% endblock %}
+
+<div class="requirements-panel">
+    {% block game_requirements %}
+    <ul>
+        <li><strong>OS:</strong> Windows 10</li>
+        <li><strong>CPU:</strong> i7 or equivalent</li>
+        <li><strong>RAM:</strong> 16 GB</li>
+        <li><strong>GPU:</strong> GTX 2070 or better</li>
+    </ul>
+    {% endblock %}
+</div>
+
+
+{% block game_description %}
+<p>
+    Halo Infinite is a multiplayer Co-Op and competitive experience.
+</p>
+{% endblock %}

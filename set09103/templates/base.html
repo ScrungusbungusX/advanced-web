@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+    <title>The Video Games Store</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+<nav class="navbar">
+    <div class="menu-container">
+
+        <div class="menu">
+            <a href="{{ url_for('index') }}" class="menu-button">Home</a>
+        </div>
+
+
+        <div class="menu dropdown-container">
+            <button id="menuButton-search" class="menu-button">Search</button>
+            <div class="dropdown hidden">
+		<a href="{{ url_for('game_listings') }}">See Full List</a>
+                <form action="{{ url_for('game_listings') }}" method="GET">
+                    <input type="text" id="searchInput" name="q" placeholder="Search for game...">
+                </form>
+            </div>
+        </div>
+
+        <div class="menu">
+            <a href="{{ url_for('categories') }}" class="menu-button">Categories</a>
+        </div>
+
+
+        <div class="menu dropdown-container">
+            <button id="menuButton-profile" class="menu-button">Profile</button>
+            <div class="dropdown hidden">
+                <a href="{{ url_for('settings') }}">Settings</a>
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </div>
+
+
+        <div class="menu dropdown-container">
+            <button id="menuButton-help" class="menu-button">Help</button>
+            <div class="dropdown hidden">
+                <a href="{{ url_for('faq') }}">FAQ</a>
+                <a href="{{ url_for('form') }}">Form</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="visualbar">
+	<p> </p>
+    </div>
+
+    <div class="content">
+	<h1 class="site-title">The Video Games Store</h1>
+
+        {% block content %}{% endblock %}
+    </div>
+
+<script src="{{ url_for('static', filename='styles.js') }}"></script>
+</body>
+</html>

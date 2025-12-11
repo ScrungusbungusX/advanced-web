@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Game Listings Page</h2>
+
+<div id="game-list">
+    <a href="{{ url_for('game1') }}" 
+	class="game-card" 
+	data-title="Super Mario Odyssey"
+	data-tags="switch nintendo platformer">
+
+	<h3>Super Mario Odyssey</h3>
+	<p>Platform: Switch</p>
+    </a>
+
+    <a href="{{ url_for('game2') }}" 
+	class="game-card" 
+	data-title="Halo Infinite"
+	data-tags="xbox pc shooter">
+
+	<h3>Halo Infinite</h3>
+	<p>Platform: PC, Xbox, Playstation</p>
+    </a>
+
+    <a href="{{ url_for('game3') }}" 
+	class="game-card" 
+	data-title="Elden Ring"
+	data-tags="pc playstation xbox rpg hard">
+
+	<h3>Elden Ring</h3>
+	<p>Platform: PC, Xbox, Playstation</p>
+    </a>
+
+    <a href="{{ url_for('game4') }}" 
+	class="game-card" 
+	data-title="The Witcher 3"
+	data-tags="pc playstation xbox switch open-world">
+
+	<h3>The Witcher 3</h3>
+	<p>Platform: PC, Switch, Playstation</p>
+    </a>
+</div>
+{% endblock %}
+

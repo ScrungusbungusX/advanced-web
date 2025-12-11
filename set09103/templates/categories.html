@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Categories Page</h2>
+
+<div class="tag-filter">
+    <a href="{{ url_for('game_listings') }}?tag=switch" class="tag-link">Nintendo Switch</a>
+    <a href="{{ url_for('game_listings') }}?tag=pc" class="tag-link">PC</a>
+    <a href="{{ url_for('game_listings') }}?tag=playstation" class="tag-link">Playstation</a>
+    <a href="{{ url_for('game_listings') }}?tag=xbox" class="tag-link">Xbox</a>
+    <a href="{{ url_for('game_listings') }}?tag=open-world" class="tag-link">Open World</a>
+    <a href="{{ url_for('game_listings') }}?tag=shooter" class="tag-link">Shooters</a>
+    <a href="{{ url_for('game_listings') }}?tag=hard" class="tag-link">Difficult</a>
+    <a href="{{ url_for('game_listings') }}?tag=platformer" class="tag-link">Platformers</a>
+</div>
+
+{% endblock %}

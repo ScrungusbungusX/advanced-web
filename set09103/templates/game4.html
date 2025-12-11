@@ -1,0 +1,36 @@
+{% extends "game_base.html" %}
+
+{% block game_title %}
+The Witcher 3
+{% endblock %}
+
+{% block game_slideshow %}
+<div class="slideshow-container">
+    <button class="slide-btn prev">&#10094;</button>
+    <div class="slides-wrapper">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_608af6cfe0eab3f37265550b391732a3e88d1a4f.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_dc55eeb409d6e187456a8e159018e8da098fa468.1920x1080.jpg') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/ss_eda99e7f705a113d04ab2a7a36068f3e7b343d17.1920x1080.jpg') }}">
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+</div>
+
+{% endblock %}
+
+<div class="requirements-panel">
+    {% block game_requirements %}
+    <ul>
+	<li>OS: Windows 7+</li>
+	<li>CPU: i5 or equivalent</li>
+	<li>RAM: 8 GB</li>
+	<li>GPU: GTX 1070 or better</li>
+    </ul>
+    {% endblock %}
+</div>
+
+{% block game_description %}
+<p>
+    The Witcher 3 is an open world game developed by CD PROJEKT RED.
+</p>
+{% endblock %}

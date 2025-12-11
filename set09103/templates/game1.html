@@ -1,0 +1,33 @@
+{% extends "game_base.html" %}
+
+{% block game_title %}
+Super Mario Odyssey
+{% endblock %}
+
+{% block game_slideshow %}
+<div class="slideshow-container">
+    <button class="slide-btn prev">&#10094;</button>
+    <div class="slides-wrapper">
+	<img class="slide" src="{{ url_for('static', filename='images/1839d571921e3fb19ef48da64c145cb8ce573b07d7390c6350f15291b3905048.png') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/d0510e4804381287c64dc3ab374ae9273419e263e9a732e72af3b39cd70f2b5f.png') }}">
+	<img class="slide" src="{{ url_for('static', filename='images/7db70ecd883f94d935f65b9f4454b8151b6f8be7c4be95543e87488e48e5a6b9.png') }}">
+    </div>
+
+    <button class="slide-btn next">&#10095;</button>
+</div>
+
+{% endblock %}
+
+<div class="requirements-panel">
+    {% block game_requirements %}
+    <ul>
+	<li>Just get a switch</li>
+    </ul>
+    {% endblock %}
+</div>
+
+{% block game_description %}
+<p>
+    Super Mario Odyssey is a very expensive game that proves steam is better.
+</p>
+{% endblock %}
